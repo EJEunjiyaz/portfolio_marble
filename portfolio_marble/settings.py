@@ -21,12 +21,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'yfsr&ytsu=9^_qg3)l=jj-#78@e=p_fx6v=ava#8_)a4^^lfx@'
+with open(os.path.join(BASE_DIR, "secret_key.txt")) as f:
+    SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['35.198.245.99']
+ALLOWED_HOSTS = ['35.198.245.99', '127.0.0.1']
 
 # Application definition
 
@@ -122,3 +123,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "vichyawat/static"),
     # '/var/www/static/',
 ]
+
+# HTTPS settings
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
+SECURE_SSL_REDIRECT = False
