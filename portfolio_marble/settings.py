@@ -119,6 +119,7 @@ STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "vichyawat/static"),
+    # os.path.join(BASE_DIR, "vichyawat/static"),
+    BASE_DIR.joinpath("vichyawat/static"),
     # '/var/www/static/',
 ]
